@@ -35,7 +35,7 @@ router.post('/signup', async function (req, res) {
   router.post('/login',async function (req, res) {
 
     
-      const {email,password} = req.body[0];
+      const {email,password} = req.body;
       const userFromDB = await getUserByName(email);
       console.log(userFromDB);
       var passwordMatch;
@@ -61,7 +61,7 @@ router.post('/signup', async function (req, res) {
 
   router.post('/forgotpassword', async function(req, res) {
     console.log("entered in to forgotpassword route")
-    const {email} = req.body[0];
+    const {email} = req.body;
     const userFromDB = await getUserByName(email);
     console.log(userFromDB);
 
